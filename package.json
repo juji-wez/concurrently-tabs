@@ -1,6 +1,7 @@
 {
   "name": "concurrently-tabs",
-  "version": "1.0.0",
+  "type": "module",
+  "version": "0.0.1",
   "description": "running commands concurrently, and view it in tabs in cli",
   "main": "index.js",
   "scripts": {
