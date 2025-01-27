@@ -1,0 +1,23 @@
+{
+  "name": "concurrently-tabs",
+  "version": "1.0.0",
+  "description": "running commands concurrently, and view it in tabs in cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juji-wez/concurrently-tabs.git"
+  },
+  "keywords": [
+    "concurrently",
+    "tabs"
+  ],
+  "author": "juji@wheeleasy.org",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juji-wez/concurrently-tabs/issues"
+  },
+  "homepage": "https://github.com/juji-wez/concurrently-tabs#readme"
+}
