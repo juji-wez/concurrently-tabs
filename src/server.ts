@@ -11,6 +11,7 @@ import { HTTPException } from 'hono/http-exception'
 
 import { dirname, relative } from 'path';
 import { fileURLToPath } from 'url';
+import consola from 'consola'
     
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const relativePath = relative(process.cwd(), __dirname);
@@ -49,7 +50,7 @@ export function server({
       let exited = false
 
       stream.onAbort(() => {
-        console.log('aborting connection')
+        consola.info('aborting connection')
         exit()
         stream.close()
         exited = true
