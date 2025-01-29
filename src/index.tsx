@@ -33,5 +33,3 @@ async function onExit(){
 addExitCallback((signal) => {
   onExit()
 })
-
-// await open(`http://localhost:${port}`)
