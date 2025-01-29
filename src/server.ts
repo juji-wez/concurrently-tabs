@@ -9,6 +9,12 @@ import { streamSSE } from 'hono/streaming'
 import { streamProc } from './lib/stream-proc.js'
 import { HTTPException } from 'hono/http-exception'
 
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+    
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+
 export function server({
   port = 3000,
   procs
@@ -23,6 +29,7 @@ export function server({
     return c.html(layout(content({ args: procs.map(v => v.arg) })))
   })
 
+  console.log(__dirname)
   app.use('/static/*', serveStatic({ root: './src' }))
 
   app.get('/log/:id', async (c) => {
