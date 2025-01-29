@@ -9,7 +9,7 @@ export const content = ({ args }:{ args: ArgsObject[] }) => {
             return `<button class="arg" 
               data-name="${v.name}"
               data-cmd="${v.cmd}" 
-              data-index="${i}">"${v.name || v.cmd}"</button>`
+              data-index="${i}">${v.name || v.cmd}</button>`
           }).join('')}
           <button class="all">All</button>
         </nav>
