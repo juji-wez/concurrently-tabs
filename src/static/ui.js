@@ -3,8 +3,8 @@ let data = {}
 
 function setGrid( num, htmlElm ){
 
-  // const width = window.innerWidth
-  // const height = window.innerHeight
+  const width = window.innerWidth
+  const height = window.innerHeight
   let rowcol = null;
 
   if(num === 1){
@@ -12,11 +12,11 @@ function setGrid( num, htmlElm ){
   }
 
   if(num === 2){
-    rowcol = { row: 1, col: 2 }
+    rowcol = width < height ? { row: 2, col: 1 } : { row: 1, col: 2 }
   }
 
   if(num > 2){
-    rowcol = { row: Math.ceil(num/2), col: 2 }
+    rowcol = width < height ? { row: num, col: 1 } : { row: Math.ceil(num/2), col: 2 }
   }
 
   if(!rowcol)
@@ -27,7 +27,8 @@ function setGrid( num, htmlElm ){
   else
     htmlElm.setAttribute('style', [
       `--grid-cols: ${[...new Array(rowcol.col)].map(_ => '1fr').join(' ')}`,
-      `--grid-rows: ${[...new Array(rowcol.row)].map(_ => '1fr').join(' ')}`
+      `--grid-rows: ${[...new Array(rowcol.row)].map(_ => '1fr').join(' ')}`,
+      `--grid-col-num: ${rowcol.col}`
     ].join(';'));
 
 }
@@ -35,8 +36,14 @@ function setGrid( num, htmlElm ){
 export function ui( store ){
 
   const content = document.querySelector('.content')
+  let lastActiveLength = 0
+  window.addEventListener('resize',() => {
+    lastActiveLength && setGrid( lastActiveLength, content )
+  })
 
   store.addListener(( active ) => {
+
+    lastActiveLength = active.length
 
     // set grid
     setGrid( active.length, content )

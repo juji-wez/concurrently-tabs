@@ -88,7 +88,7 @@ main {
 
       &:nth-child(odd):last-child{
         grid-column-start: 1;
-        grid-column-end: 3;
+        grid-column-end: calc(var(--grid-col-num) + 1);
       }
 
       & > .text-content{
