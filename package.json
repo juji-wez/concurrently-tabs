@@ -1,5 +1,5 @@
 {
-  "name": "concurrently-tabs",
+  "name": "@wheeleasy/concurrently-tabs",
   "version": "0.0.1",
   "type": "module",
   "bin": "src/index.tsx",  
