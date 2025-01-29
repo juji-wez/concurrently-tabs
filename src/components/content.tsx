@@ -1,3 +1,7 @@
+/** @jsx jsx */
+/** @jsxImportSource hono/jsx */
+/** @jsxFrag hono/jsx */
+
 import type { FC } from 'hono/jsx'
 import type { ArgsObject } from '../lib/types.js'
 
