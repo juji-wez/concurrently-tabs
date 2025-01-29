@@ -1,6 +1,3 @@
-/** @jsx jsx */
-/** @jsxImportSource hono/jsx */
-/** @jsxFrag hono/jsx */
 
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
