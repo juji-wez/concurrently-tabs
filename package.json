@@ -3,10 +3,10 @@
   "version": "0.0.5",
   "type": "module",
   "bin": {
-    "concurrently-tabs": "src/index.tsx"
+    "concurrently-tabs": "src/index.ts"
   },
   "scripts": {
-    "dev": "tsx watch src/index.tsx 'ls -la .' '[date]:./dev/date.bash' './dev/color.bash'"
+    "dev": "tsx watch src/index.ts 'ls -la .' '[date]:./dev/date.bash' './dev/color.bash'"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",

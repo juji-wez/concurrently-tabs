@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet" />
+    <link href="/static/clusterize.min.css" rel="stylesheet" />
+    <script src="/static/clusterize.min.js"></script>
+    <link rel="stylesheet" href="/static/index.css"  />
+    <script type="module" src="/static/index.js" />
+  </head>
+  <body>
+    <div id="root" style="display:contents">
+      <main>
+        <nav>
+          <button class="arg" 
+              data-name=""
+              data-cmd="ls -la ." 
+              data-index="0">"ls -la ."</button><button class="arg" 
+              data-name="date"
+              data-cmd="./dev/date.bash" 
+              data-index="1">"date"</button><button class="arg" 
+              data-name=""
+              data-cmd="./dev/color.bash" 
+              data-index="2">"./dev/color.bash"</button>
+          <button class={'all'}>All</button>
+        </nav>
+        <div class="content"></div>
+      </main>
+    </div>
+  </body>
+</html>

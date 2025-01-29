@@ -4,8 +4,8 @@
 
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
-import { Layout } from './components/layout.js'
-import { Content } from './components/content.js'
+import { layout } from './components/layout.js'
+import { content } from './components/content.js'
 import type { Proc } from './lib/run-commands.js'
 import { serveStatic } from '@hono/node-server/serve-static'
 import { streamSSE } from 'hono/streaming'
@@ -23,7 +23,7 @@ export function server({
   const app = new Hono()
   
   app.get('/', (c) => {
-    return c.html(<Layout><Content args={procs.map(v => v.arg)} /></Layout>)
+    return c.html(layout(content({ args: procs.map(v => v.arg) })))
   })
 
   app.use('/static/*', serveStatic({ root: './src' }))
