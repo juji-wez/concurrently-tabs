@@ -19,17 +19,17 @@ function setGrid( num, htmlElm ){
     rowcol = width < height ? { row: num, col: 1 } : { row: Math.ceil(num/2), col: 2 }
   }
 
-  if(!rowcol)
-    htmlElm.setAttribute('style', [
-      `--grid-cols: 1fr`,
-      `--grid-rows: 1fr`
-    ].join(';'));
-  else
-    htmlElm.setAttribute('style', [
-      `--grid-cols: ${[...new Array(rowcol.col)].map(_ => '1fr').join(' ')}`,
-      `--grid-rows: ${[...new Array(rowcol.row)].map(_ => '1fr').join(' ')}`,
-      `--grid-col-num: ${rowcol.col}`
-    ].join(';'));
+  if(!rowcol){
+    htmlElm.style.setProperty('--grid-cols', '1fr')
+    htmlElm.style.setProperty('--grid-rows', '1fr')
+    htmlElm.style.setProperty('--grid-col-num', `${rowcol.col}`)
+  }
+
+  else{
+    htmlElm.style.setProperty('--grid-cols', `${[...new Array(rowcol.col)].map(_ => '1fr').join(' ')}`)
+    htmlElm.style.setProperty('--grid-rows', `${[...new Array(rowcol.row)].map(_ => '1fr').join(' ')}`)
+    htmlElm.style.setProperty('--grid-col-num', `${rowcol.col}`)
+  }
 
 }
 

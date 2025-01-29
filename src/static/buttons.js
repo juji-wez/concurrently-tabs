@@ -44,7 +44,7 @@ export function buttons(store){
   })
 
   setTimeout(() => {
-    btns[1].click()
+    allBtn.click()
   },10)
 
 }

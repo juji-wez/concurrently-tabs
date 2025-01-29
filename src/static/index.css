@@ -27,6 +27,7 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
+  height: 100vh;
 
   nav{
 
@@ -45,7 +46,8 @@ main {
       cursor: pointer;
       outline: inherit;
       border: 1px solid #444444;
-      padding: 0.5rem 1rem;
+      padding: 0.2rem 0.5rem;
+      font-size: 0.9rem;
       display: block;
       white-space: nowrap;
       text-decoration: none;
@@ -63,16 +65,18 @@ main {
   }
 
   .content{
+    --grid-rows: 1fr;
+    --grid-cols: 1fr 1fr;
+    --grid-col-num: 2;
+    --font-size: 0.7rem;
+
     font-family: "JetBrains Mono", serif;
     font-optical-sizing: auto;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: var(--font-size);
 
-    --grid-rows: 1fr;
-    --grid-cols: 1fr 1fr;
-
-    height: calc(100vh - 42px);
     display: grid;
+    height: calc( 100vh - 30px );
     grid-template-columns: var(--grid-cols);
     grid-template-rows: var(--grid-rows);
     /* gap: 0.5rem;

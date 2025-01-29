@@ -4,7 +4,7 @@ import { Layout } from './components/layout.js'
 import { Content } from './components/content.js'
 import type { Proc } from './lib/run-commands.js'
 import { serveStatic } from '@hono/node-server/serve-static'
-import { SSEStreamingApi, streamSSE } from 'hono/streaming'
+import { streamSSE } from 'hono/streaming'
 import { streamProc } from './lib/stream-proc.js'
 import { HTTPException } from 'hono/http-exception'
 

@@ -1,6 +1,7 @@
 import { buttons } from '/static/buttons.js'
 import { ui } from '/static/ui.js'
 import { connect } from '/static/connect.js'
+import { keyEvents } from './key-events.js'
 
 const store = {
   $active: [],
@@ -22,4 +23,5 @@ document.addEventListener('DOMContentLoaded', function() {
   buttons( store )
   ui( store )
   connect( store )
+  keyEvents()
 });

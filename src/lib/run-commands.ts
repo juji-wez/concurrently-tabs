@@ -27,9 +27,7 @@ export function runCommands(args: ArgsObject[]){
     const transformBytesOut = new TransformBytes(false)
     const transformBytesErr = new TransformBytes(true)
 
-    consola.info(`running command`)
-    consola.info(arg)
-    // consola.info(`filename: ${filename}`)
+    consola.info(`running '${arg.cmd}'${arg.name?` as ${arg.name}`:''}`)
     
 		subProcess.stdout.pipe(transformBytesOut).pipe(writer);
 		subProcess.stderr.pipe(transformBytesErr).pipe(writer);
