@@ -18,8 +18,7 @@ About:
     [ctrl0] normalize
 ```
 
-It looks like this:
-
+So you can work like this:
 
 <p align="center" width="100%">
   <img width="100%" heigt="auto" src="https://raw.githubusercontent.com/juji-wez/concurrently-tabs/refs/heads/main/asset/screen.png"> 
