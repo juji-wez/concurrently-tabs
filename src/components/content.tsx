@@ -8,7 +8,10 @@ export const Content: FC<{ args: ArgsObject[] }> = ({ args }) => {
     <main>
       <nav>
         {args.map((v,i) => {
-          return <button class="arg" data-index={i}>{v.name || v.cmd}</button>
+          return <button class="arg" 
+            data-name={v.name} 
+            data-cmd={v.cmd} 
+            data-index={i}>{v.name || v.cmd}</button>
         })}
         <button class={'all'}>All</button>
       </nav>

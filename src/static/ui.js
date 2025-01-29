@@ -33,12 +33,27 @@ function setGrid( num, htmlElm ){
 
 }
 
+function getArg( args, index ){
+  const arg = args.find(v => v.index === (index*1))
+  return arg
+}
+
 export function ui( store ){
 
   const content = document.querySelector('.content')
   let lastActiveLength = 0
   window.addEventListener('resize',() => {
     lastActiveLength && setGrid( lastActiveLength, content )
+  })
+
+  const argElms = document.querySelectorAll('.arg')
+  console.log(argElms)
+  const args = [...argElms].map(v => {
+    return {
+      cmd: v.dataset.cmd,
+      name: v.dataset.name,
+      index: v.dataset.index * 1
+    }
   })
 
   store.addListener(( active ) => {
@@ -85,6 +100,12 @@ export function ui( store ){
       const s = document.createElement('div')
       s.dataset.index = v
       s.classList.add('text-scroll')
+
+      const t = document.createElement('div')
+      t.classList.add('text-title')
+      const arg = getArg( args, v )
+      t.innerHTML = arg.name ? arg.name + `<span>${arg.cmd}</span>` : `<span>${arg.cmd}</span>`
+      s.appendChild(t)
 
       const c = document.createElement('div')
       c.classList.add('text-content')

@@ -86,16 +86,38 @@ main {
 
       background: #131313;
       border: 1px solid rgb(55 55 55);
-      padding: 1rem;
       overflow: auto;
-      /* resize: both; */
+      position: relative;
 
       &:nth-child(odd):last-child{
         grid-column-start: 1;
         grid-column-end: calc(var(--grid-col-num) + 1);
       }
 
+      & > .text-title{
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0.2rem 0.3rem;
+        font-size: 0.8rem;
+        border-bottom: #f5f5f5;
+        background-color: #000000;
+        align-items: center left;
+        border-bottom: 1px solid rgb(55 55 55);
+
+        & > span{
+          margin-left: 0.5rem;
+          color: #b9b9b9;
+        }
+      }
+
       & > .text-content{
+
+        padding: 1rem;
   
         & > .text-data{
           display: grid;
