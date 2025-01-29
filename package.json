@@ -1,8 +1,8 @@
 {
   "name": "@wheeleasy/concurrently-tabs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
-  "bin": "src/index.tsx",  
+  "bin": "src/index.tsx",
   "scripts": {
     "dev": "tsx watch src/index.tsx 'ls -la .' '[date]:./dev/date.bash' './dev/color.bash'"
   },
