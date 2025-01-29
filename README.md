@@ -1,7 +1,7 @@
 # Concurrently Tabs
 
 ```
-About:
+  About:
     concurrently, but sends the output to a browser
 
   Usage:
