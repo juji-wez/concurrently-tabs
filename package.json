@@ -1,6 +1,6 @@
 {
   "name": "@wheeleasy/concurrently-tabs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "bin": {
     "concurrently-tabs": "src/index.ts"
