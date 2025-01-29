@@ -9,10 +9,11 @@ import { streamSSE } from 'hono/streaming'
 import { streamProc } from './lib/stream-proc.js'
 import { HTTPException } from 'hono/http-exception'
 
-import { dirname } from 'path';
+import { dirname, relative } from 'path';
 import { fileURLToPath } from 'url';
     
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const relativePath = relative(process.cwd(), __dirname);
 
 
 export function server({
@@ -29,8 +30,7 @@ export function server({
     return c.html(layout(content({ args: procs.map(v => v.arg) })))
   })
 
-  console.log(__dirname)
-  app.use('/static/*', serveStatic({ root: './src' }))
+  app.use('/static/*', serveStatic({ root: `./${relativePath}` }))
 
   app.get('/log/:id', async (c) => {
     const { id } = c.req.param()
