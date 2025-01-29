@@ -1,0 +1,119 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,body{
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+main {
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+
+  nav{
+
+    display: flex;
+    background: #111;
+    overflow: auto;
+    position: sticky;
+    top: 0;
+
+    button {
+      background: #000000;
+      color: inherit;
+      border: none;
+      padding: 0;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+      border: 1px solid #444444;
+      padding: 0.5rem 1rem;
+      display: block;
+      white-space: nowrap;
+      text-decoration: none;
+
+      &.active{
+        border: 1px solid #4ad8ff;
+        color: #4ad8ff;
+      }
+
+      &.all{
+        position: sticky;
+        right: 0;
+      }
+    }
+  }
+
+  .content{
+    font-family: "JetBrains Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 0.9rem;
+
+    --grid-rows: 1fr;
+    --grid-cols: 1fr 1fr;
+
+    height: calc(100vh - 42px);
+    display: grid;
+    grid-template-columns: var(--grid-cols);
+    grid-template-rows: var(--grid-rows);
+    /* gap: 0.5rem;
+    padding: 0.5rem; */
+
+    & > .text-scroll{
+
+      background: #000;
+      border: 1px solid rgb(94, 94, 94);
+      padding: 1rem;
+      overflow: auto;
+      /* resize: both; */
+
+      &:nth-child(odd):last-child{
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+
+      & > .text-content{
+  
+        & > .text-data{
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 1rem;
+  
+          & > .text-data-time{
+            opacity: 0.7;
+            &.trns{
+              opacity: 0;
+            }
+          }
+  
+          &.error > .text-data-time{
+            color: rgb(255, 160, 160);
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+}
