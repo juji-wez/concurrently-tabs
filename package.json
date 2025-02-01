@@ -1,6 +1,6 @@
 {
   "name": "@wheeleasy/concurrently-tabs",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "type": "module",
   "bin": {
     "concurrently-tabs": "src/index.ts"
@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "tsx watch src/index.ts 'ls -la .' '[date]:./dev/date.bash' './dev/color.bash'"
   },
+  "license": "MIT",
   "dependencies": {
     "@hono/node-server": "^1.13.7",
     "@types/randomstring": "^1.3.0",
