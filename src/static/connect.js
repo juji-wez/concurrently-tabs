@@ -40,7 +40,7 @@ export function connect( store ){
               detail: {
                 row: `<div class="text-data ${type === '1'?'error':''}">
                   <div class="text-data-time ${lastTime === time && lastType === type?'trns':''}">${time}</div>
-                  <div class="text-data-content">${ansi_up.ansi_to_html(rest.join('|'))}</div>
+                  <div class="text-data-content"><pre>${ansi_up.ansi_to_html(rest.join('|'))}</pre></div>
                 </div>`
               }
             }))
